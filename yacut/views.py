@@ -2,7 +2,8 @@ from flask import redirect, render_template, flash
 
 from . import app, db
 from .forms import URLMapForm
-from .models import URLMap, get_short
+from .models import URLMap
+from .utils import get_short
 
 
 @app.route('/', methods=['GET', 'POST'])

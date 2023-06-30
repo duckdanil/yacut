@@ -1,11 +1,12 @@
 import re
-
-from flask import jsonify, request
 from http import HTTPStatus
 
+from flask import jsonify, request
+
 from . import app, db
-from .models import URLMap, get_short
 from .error_handlers import InvalidAPIUsage
+from .models import URLMap
+from .utils import get_short
 
 
 @app.route('/api/id/<string:short_id>/', methods=['GET'])

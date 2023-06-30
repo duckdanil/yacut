@@ -1,20 +1,8 @@
 from datetime import datetime
+
 from flask import url_for
 
-import random
-import string
-
 from . import db
-
-
-def get_short(short):
-    if short and short != '':
-        return short
-    symbols = string.ascii_letters + string.digits
-    while True:
-        new_short = ''.join((random.choice(symbols) for _ in range(6)))
-        if URLMap.query.filter_by(short=new_short).first() is None:
-            return new_short
 
 
 class URLMap(db.Model):
